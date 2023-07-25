@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    user-select: none;
+    font-family: Cinzel;
+}
+
+header{
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main{
+    height: 63vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main article{
+    height: 15%;
+    width: 75%;
+    text-align: center;
+}
+
+main #form{
+    height: 85%;
+    width: 75%;
+}
+
+#dropArea{
+    border-radius: 42px;
+    border: 0.4px solid #7203FF;
+    height: 65%;
+}
+
+#steps{
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+
+#steps .step{
+    width: 25%;
+}
+
+#divFile{
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#divPreview{
+    margin-top: 20px;
+}
+
+#divBtn{
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+    height: 12vh;
+    background-color: #7203FF;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.footerImg{
+    width: 90%;
+}
+
+.social img{
+    width: 40px;
+    margin: 0 7px;
+}
+
+.divFooter{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.divFooterLogo{
+    text-align: center;
+}
+
+.divFooter a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.divFooter a:hover{
+    text-decoration: underline;
+}
+
+.txtDecorated{
+    color: #7203FF;
+    font-weight: 700;
+}
+
+.btn{
+    border: 1px solid #5F01D6;
+    background-color: #5F01D6;
+    padding: 20px 60px;
+    border-radius: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #7203FF;
+}
+
+#btn:active{
+    background-color: #7203FF;
+}
+
+#btnFile{
+    background-color: #fff;
+    color: black;
+    border: 1px dashed #7203FF;
+}
+
+#btnFile:hover{
+    border: 1px solid #7203FF;
+    background-color: #7203FF;
+    color: #fff;
+}
+
+#error, #obs{
+    margin-top: 10px;
+    color: red;
+}
+
+#btnFile.highlight{
+    background-color: #7203FF;
+    color: #fff;
+}
+
+#mainResult{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#mainResult img{
+    height: 40%;
+    border: #7203FF solid 1px;
+}
+
+.divDesc{
+    width: 300px;
+    text-align: center;
+}
+
+.divDesc span,
+ .divDesc h2{
+    font-size: 22px;
+}   
+
+
+@media only screen and (max-device-width: 850px) {
+    footer{
+        height: 9vh;
+    }
+
+    .footerImg{
+        width: 70%;
+    }
+
+    header{
+        height: 20vh;
+    }
+
+    main{
+        height: 71vh;
+    }
+
+    #btnFile{
+        padding: 10PX;
+        border-radius: 5px;
+        border: solid 1px #5F01D6;
+    }
+
+    #steps{
+        flex-direction: column;
+        text-align: justify;
+        padding: 30px 50px 0px 50px;
+    }
+    
+    #steps .step{
+        width: 100%;
+    }
+
+
+}
+
+@media only screen and (max-device-width: 770px){
+    *{
+        font-size: 35px;
+    }
+    
+    header img{
+        width: 700px;
+    }
+
+    header{
+        height: 40vh;
+    }
+
+    main{
+        height: 110vh;
+    }
+    
+    main article{
+        width: 80%;
+        height: 20%;
+        text-align: justify;
+    }
+
+    main #form{ 
+        width: 80%;
+        height: 60%;
+    }
+
+    #dropArea{
+        border: none;
+        height: 85%;
+    }
+
+    #steps{
+        height: 40%;
+    }
+
+    #btnFile{
+        width: 60%;
+        text-align: center;
+    }
+    
+    .divFooter span{
+        display: none;
+    }
+
+    .divFooter a{
+        font-size: 12px;
+    }
+
+    .social img{
+        width: 25px;
+    }
+
+    .divFooter a{
+        font-size: 20px;
+    }
+
+    .divFooterLogo{
+        display: none;
+    }
+
+    .social img{
+        width: 40px;
+    }
+
+    .divDesc h2, .divDesc span{
+        font-size: 35px;
+    }
+
+    .divDesc{
+        width: 500px;
+    }
+
+    #btnFile{
+        background-color: #5F01D6;
+        color: #fff;
+        padding: 20px;
+        border-radius: 30px;
+    }
+}
+
+@media only screen and (max-device-width: 450px){
+    *{
+        font-size: 40px;
+        line-height: 70px;
+    }
+    
+    header{
+        height: 20vh;
+    }
+
+    main{
+        height: 80vh;
+    }
+
+    main article{
+        height: 30%;
+    }
+
+    footer{
+        height: 6vh;
+    }
+
+    .divFooter a{
+        font-size: 30px;
+    }
+
+    .social img{
+        width: 50px;
+    }
+
+    #mainResult img{
+        height: 30%;
+    }
+
+    .divDesc h2, .divDesc span{
+        font-size: 45px;
+    }
+
+    .divDesc{
+        width: 700px;
+    }
+}

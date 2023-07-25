@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ class_ }}?</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imgs/logo.png') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <img src="{{ url_for('static', filename='imgs/logotype_header.svg') }}" alt="logo" class="logo">
+    </header>
+
+    <main id="mainResult">
+        <div class="divDesc">
+            <h2>Existe <span class="txtDecorated">{{ proba }}%</span> de chance de ser <span class="txtDecorated">{{ class_ }}</span></h2>
+        </div>
+        <img src="{{ url_for('static', filename='uploads/' + photo_filename) }}" alt="Image">
+        <div class="divDesc">
+            <span class="txtDecorated">Você sabia?</span>
+            <p>{{ info }}</p>
+        </div>
+        <a href="{{ url_for('home') }}"><button class="btn">Usar outra imagem!</button></a>
+    </main>
+
+    <footer>
+        <div class="divFooter">
+            <span>Redes Sociais</span>
+            <div class="social">
+                <a href="https://github.com/FabricioMacena" target="_blank">
+                    <img src="{{ url_for('static', filename='imgs/github.svg') }}" alt="github">
+                </a>
+                <a href="https://www.linkedin.com/in/fabriciomacena/" target="_blank">
+                    <img src="{{ url_for('static', filename='imgs/linkedin.svg') }}" alt="linkedin">
+                </a>
+            </div>
+        </div>
+        <div class="divFooterLogo">
+            <img src="{{ url_for('static', filename='imgs/logotype_footer.svg') }}" alt="logo" class="footerImg">
+        </div>
+        <div class="divFooter">
+            <a href="https://github.com/FabricioMacena" target="_blank">CREATED BY FABRICIOMACENA</a>
+            <a href="https://github.com/CarmoDev" target="_blank">DESIGNED BY CARMODEV</a>
+        </div>
+    </footer>
+
+</body>
+</html>

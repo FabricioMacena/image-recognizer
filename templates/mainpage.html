@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Recognize</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imgs/logo.png') }}"/>
+    <link rel="stylesheet" href="{{  url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='imgs/logotype_header.svg') }}" alt="logo" class="logo">
+    </header>
+
+    <main>
+
+        <article>
+            <p>Bem-vindo(a) ao <span class="txtDecorated">Recognizer</span>, nosso site de <span class="txtDecorated">reconhecimento de animais marinhos!</span> Você está prestes a experimentar a incrível capacidade da <span class="txtDecorated">inteligência artificial</span> em identificar o que há em uma imagem. Para começar, siga os passos simples abaixo &darr; <strong id="obs">Obs!</strong> essa é a 1º versão dos site, posteriormente poderão haver tanto melhorias nos reconhecimentos como também aumento de classes 😉</p>
+        </article>
+
+        <form action="/result" method="post" enctype="multipart/form-data" id="form">
+
+            <div id="dropArea">
+                <div id="steps">
+                    <div class="step">
+                        <strong>1º Passo:</strong>
+                        <p>Selecione a imagem de um <span class="txtDecorated">baleia, tubarão, tartaruga, polvo, golfinho ou peixe</span></p>
+                    </div>
+                    <div class="step">
+                        <strong>2º Passo:</strong>
+                        <p>Clique em enviar e veja a <span class="txtDecorated">mágica acontecer!!</span></p>
+                    </div>
+                </div>
+                <div id="divFile">
+                    <label for="photo" class="btn" id="btnFile">Arraste e solte ou clique aqui para selecionar uma imagem (PNG, JPG)</label>
+                    <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png" style="display: none;">
+                    <div id="divPreview">
+                        <p id="preview">Nenhuma imagem enviada.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="divBtn">
+                <input type="submit" value="Descobrir agora!" class="btn">
+                <div id="error">
+                    {% if error_message %}
+                        <strong>{{ error_message }}</strong>
+                    {% endif %}
+                </div>
+            </div>
+        </form> 
+
+    </main>
+
+    <footer>
+        <div class="divFooter">
+            <span>Redes Sociais</span>
+            <div class="social">
+                <a href="https://github.com/FabricioMacena" target="_blank">
+                    <img src="{{ url_for('static', filename='imgs/github.svg') }}" alt="github">
+                </a>
+                <a href="https://www.linkedin.com/in/fabriciomacena/" target="_blank">
+                    <img src="{{ url_for('static', filename='imgs/linkedin.svg') }}" alt="linkedin">
+                </a>
+            </div>
+        </div>
+        <div class="divFooterLogo">
+            <img src="{{ url_for('static', filename='imgs/logotype_footer.svg') }}" alt="logo" class="footerImg">
+        </div>
+        <div class="divFooter">
+            <a href="https://github.com/FabricioMacena" target="_blank">CREATED BY FABRICIOMACENA</a>
+            <a href="https://github.com/CarmoDev" target="_blank">DESIGNED BY CARMODEV</a>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
