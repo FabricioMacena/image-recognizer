@@ -145,7 +145,7 @@ footer{
     color: #fff;
 }
 
-#error, #obs{
+#error{
     margin-top: 10px;
     color: red;
 }
@@ -310,11 +310,24 @@ footer{
     }
 
     main article{
-        height: 30%;
+        height: 35%;
+    }
+
+    main form{
+        height: 65%;
     }
 
     footer{
-        height: 6vh;
+        height: 8vh;
+        font-size: 30px;
+    }
+
+    #divFile{
+        height: 60%;
+    }
+
+    #divBtn{
+        height: 15%;
     }
 
     .divFooter a{
