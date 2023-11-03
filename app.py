@@ -3,11 +3,7 @@ import numpy as np
 import cv2
 from flask import Flask, render_template, request
 import os
-
-app = Flask(__name__)
-
-app.config['UPLOAD_FOLDER'] = 'static/uploads'
-
+    
 def preprocess_image(img_path):
     target_name = ['Baleia', 'Golfinho', 'Peixe', 'Polvo', 'Tartaruga', 'Tubarão']
 
@@ -60,26 +56,35 @@ def info_class(classe):
 
     return infos[classe][np.random.randint(0, 3)]
 
-@app.route("/")
-def home():
-    return render_template('mainpage.html')
 
-@app.route("/result", methods=['POST'])
-def result():
-    if 'photo' not in request.files or request.files['photo'].filename == '':
-        error_message = 'A imagem ainda não foi enviada.'
-        return render_template('mainpage.html', error_message=error_message)
+def create_app():
+    app = Flask(__name__)
+    app.config['UPLOAD_FOLDER'] = 'static/uploads'
 
-    img = request.files['photo']
+    @app.route("/")
+    def home():
+        return render_template('mainpage.html')
 
-    img_path = os.path.join(app.config['UPLOAD_FOLDER'], img.filename)
-    img.save(img_path)
+    @app.route("/result", methods=['POST'])
+    def result():
+        if 'photo' not in request.files or request.files['photo'].filename == '':
+            error_message = 'A imagem ainda não foi enviada.'
+            return render_template('mainpage.html', error_message=error_message)
 
-    class_, proba = preprocess_image(img_path)
+        img = request.files['photo']
 
-    info = info_class(class_)
+        img_path = os.path.join(app.config['UPLOAD_FOLDER'], img.filename)
+        img.save(img_path)
 
-    return render_template('result.html', photo_filename=img.filename, class_=class_, proba=proba, info=info)
+        class_, proba = preprocess_image(img_path)
+
+        info = info_class(class_)
+
+        return render_template('result.html', photo_filename=img.filename, class_=class_, proba=proba, info=info)
+    
+    
+    return app
 
 if __name__ == "__main__":
+    app = create_app()
     app.run(debug=True)
